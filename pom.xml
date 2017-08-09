@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.mpii</groupId>
   <artifactId>clausie</artifactId>
@@ -12,6 +12,18 @@
     <dependency>
       <groupId>edu.stanford.nlp</groupId>
       <artifactId>stanford-corenlp</artifactId>
+      <version>3.8.0</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>edu.stanford.nlp</groupId>
+      <artifactId>stanford-corenlp</artifactId>
+      <version>3.8.0</version>
+      <classifier>models</classifier>
+    </dependency>
+    <dependency>
+      <groupId>edu.stanford.nlp</groupId>
+      <artifactId>stanford-parser</artifactId>
       <version>3.7.0</version>
       <type>jar</type>
     </dependency>
@@ -19,7 +31,7 @@
       <groupId>edu.stanford.nlp</groupId>
       <artifactId>stanford-parser</artifactId>
       <version>3.7.0</version>
-      <type>jar</type>
+      <type>models</type>
     </dependency>
     <dependency>
       <groupId>net.sf.jopt-simple</groupId>

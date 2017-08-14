@@ -247,7 +247,6 @@ public class ClausIE {
 				new Runnable() {
 					int noOptional;
 
-					@Override
 					public void run() {
 						noOptional = 0;
 						for (Flag f : flags) {
@@ -287,7 +286,6 @@ public class ClausIE {
 
 			// generate propositions
 			new Runnable() {
-				@Override
 				public void run() {
 					// select which constituents to include
 					for (List<Boolean> include : includeConstituents) {

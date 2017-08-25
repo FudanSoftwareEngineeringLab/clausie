@@ -61,23 +61,23 @@ public class ConfAnnotator_method extends Thread{
     public static  void  main(String[] args){
         Thread confAnnotator1 = new ConfAnnotator_method(0,9999,"in.txt");
         Thread confAnnotator2 = new ConfAnnotator_method(10000,19999,"in1.txt");
-        Thread confAnnotator3 = new ConfAnnotator_method(20000,29999,"in2.txt");
+        /*Thread confAnnotator3 = new ConfAnnotator_method(20000,29999,"in2.txt");
         Thread confAnnotator4 = new ConfAnnotator_method(30000,39999,"in3.txt");
         Thread confAnnotator5 = new ConfAnnotator_method(40000,49999,"in4.txt");
         Thread confAnnotator6 = new ConfAnnotator_method(50000,59999,"in5.txt");
         Thread confAnnotator7 = new ConfAnnotator_method(60000,69999,"in6.txt");
         Thread confAnnotator8 = new ConfAnnotator_method(70000,79999,"in7.txt");
-        Thread confAnnotator9 = new ConfAnnotator_method(80000,89999,"in8.txt");
+        Thread confAnnotator9 = new ConfAnnotator_method(80000,89999,"in8.txt");*/
 
         confAnnotator1.start();
         confAnnotator2.start();
-        confAnnotator3.start();
+         /*confAnnotator3.start();
         confAnnotator4.start();
         confAnnotator5.start();
         confAnnotator6.start();
         confAnnotator7.start();
         confAnnotator8.start();
-        confAnnotator9.start();
+        confAnnotator9.start();*/
 
 
 
@@ -199,7 +199,7 @@ public class ConfAnnotator_method extends Thread{
                 if(id>end|| id<start){
                     continue;
                 }
-                if(str.equals("")||str == null){
+                if(str == null||str.equals("")){
                     continue;
                 }else {
                     setStr(str.trim());

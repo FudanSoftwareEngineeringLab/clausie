@@ -7,7 +7,13 @@
   <version>0.0.3</version>
   <name>clausie</name>
   <url>http://maven.apache.org</url>
-
+  <repositories>
+    <repository>
+      <id>CogcompSoftware</id>
+      <name>CogcompSoftware</name>
+      <url>http://cogcomp.cs.illinois.edu/m2repo/</url>
+    </repository>
+  </repositories>
   <dependencies>
     <dependency>
       <groupId>edu.stanford.nlp</groupId>
@@ -39,6 +45,12 @@
       <version>4.4</version>
       <type>jar</type>
     </dependency>
+    <dependency>
+      <groupId>edu.illinois.cs.cogcomp</groupId>
+      <artifactId>illinois-chunker</artifactId>
+      <version>3.1.29</version>
+    </dependency>
   </dependencies>
+
 
 </project>

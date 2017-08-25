@@ -59,8 +59,8 @@ public class ConfAnnotator_method extends Thread{
     }
 
     public static  void  main(String[] args){
-        Thread confAnnotator1 = new ConfAnnotator_method(0,9999,"in.txt");
-        Thread confAnnotator2 = new ConfAnnotator_method(10000,19999,"in1.txt");
+        Thread confAnnotator1 = new ConfAnnotator_method(2179,9999,"in.txt");
+        Thread confAnnotator2 = new ConfAnnotator_method(10510,19999,"in1.txt");
         /*Thread confAnnotator3 = new ConfAnnotator_method(20000,29999,"in2.txt");
         Thread confAnnotator4 = new ConfAnnotator_method(30000,39999,"in3.txt");
         Thread confAnnotator5 = new ConfAnnotator_method(40000,49999,"in4.txt");
@@ -216,7 +216,11 @@ public class ConfAnnotator_method extends Thread{
                 //----------change the class name
                 setStr(changeToMethod());
 
-                changeConf();
+                try {
+                    changeConf();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
 
                 Statement statement1 = conn.createStatement();
                 String sql1 = "update jdk_method set conf_description = \""+str+"\" where method_id = "+id;

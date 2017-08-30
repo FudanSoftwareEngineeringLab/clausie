@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class ConfAnnotator_method extends Thread{
+public class ConfAnnotator_parameter extends Thread{
     public void setStr(String str) {
         this.str = str;
     }
@@ -59,31 +59,23 @@ public class ConfAnnotator_method extends Thread{
     }
 
     public static  void  main(String[] args){
-        //Thread confAnnotator1 = new ConfAnnotator_method(2357,9999,"in.txt");
-        //Thread confAnnotator2 = new ConfAnnotator_method(10622,19999,"in1.txt");
-        //Thread confAnnotator3 = new ConfAnnotator_method(20000,29999,"in2.txt");
-        //Thread confAnnotator4 = new ConfAnnotator_method(30000,39999,"in3.txt");
-        Thread confAnnotator5 = new ConfAnnotator_method(49860,49999,"in4.txt");
-        //Thread confAnnotator6 = new ConfAnnotator_method(50000,59999,"in5.txt");
-        /*Thread confAnnotator7 = new ConfAnnotator_method(60000,69999,"in6.txt");
-        Thread confAnnotator8 = new ConfAnnotator_method(70000,79999,"in7.txt");
-        Thread confAnnotator9 = new ConfAnnotator_method(80000,89999,"in8.txt");*/
+        //Thread confAnnotator1 = new ConfAnnotator_parameter(0,9999,"in.txt");
+        Thread confAnnotator2 = new ConfAnnotator_parameter(10000,19999,"in1.txt");
+        Thread confAnnotator3 = new ConfAnnotator_parameter(20000,29999,"in2.txt");
+        //Thread confAnnotator4 = new ConfAnnotator_parameter(30000,39999,"in3.txt");
+
 
         //confAnnotator1.start();
-        //confAnnotator2.start();
-         //confAnnotator3.start();
+        confAnnotator2.start();
+        confAnnotator3.start();
         //confAnnotator4.start();
-        confAnnotator5.start();
-        //confAnnotator6.start();
-        /*confAnnotator7.start();
-        confAnnotator8.start();
-        confAnnotator9.start();*/
+
 
 
 
     }
 
-    public ConfAnnotator_method(int start, int end, String filename){
+    public ConfAnnotator_parameter(int start, int end, String filename){
         setStart(start);
         setEnd(end);
         setFilename(filename);
@@ -129,10 +121,10 @@ public class ConfAnnotator_method extends Thread{
     }
 
     public String changeToMethod(){
-        str = str.replace("This method",n);
-        str = str.replace("this Method",n);
-        str = str.replace("this method",n);
-        str = str.replace("This Method",n);
+        str = str.replace("This parameter",n);
+        str = str.replace("this Parameter",n);
+        str = str.replace("this parameter",n);
+        str = str.replace("This Parameter",n);
         return str;
     }
 
@@ -189,11 +181,11 @@ public class ConfAnnotator_method extends Thread{
             Connection conn = DriverManager.getConnection(url, user, password);
 
             Statement statement = conn.createStatement();
-            String sql = "select method_id,name,handled_description from jdk_method ";
+            String sql = "select parameter_id,name,handled_description from jdk_parameter ";
             ResultSet rs = statement.executeQuery(sql);
 
             while(rs.next()) {
-                setId(rs.getInt("method_id"));
+                setId(rs.getInt("parameter_id"));
                 setN(rs.getString("name"));
                 setStr(rs.getString("handled_description"));
                 if(id>end|| id<start){
@@ -223,7 +215,7 @@ public class ConfAnnotator_method extends Thread{
                 }
 
                 Statement statement1 = conn.createStatement();
-                String sql1 = "update jdk_method set conf_description = \""+str+"\" where method_id = "+id;
+                String sql1 = "update jdk_parameter set conf_description = \""+str+"\" where parameter_id = "+id;
                 statement1.execute(sql1);
                 statement1.close();
             }

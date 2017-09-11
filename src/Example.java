@@ -20,6 +20,7 @@ public class Example {
         // sentence = "Bell sometimes makes products";
         // sentence = "By using its experise, Bell made great products in 1922 in Saarland.";
         // sentence = "Albert Einstein remained in Princeton.";
+        // sentence = "There is a ghost in this room.";
         //sentence = "Albert is smart.";
         //String sentence = " Bell makes electronic, computer and building products.";
 
